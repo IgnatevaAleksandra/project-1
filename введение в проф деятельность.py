@@ -26,38 +26,55 @@ if n == 1:
 elif n == 2:
     print("Введите количество месяцев")
     m = int(input())
-    m1 = segodnya.month + m
-    if m1 >= 12:
-        m2 = m1 // 12
-        m3 = m1 % 12
-        r = segodnya.replace(month = segodnya.month + m3)
-        r2 = r.replace(year = r.year + m2)
-        if m < 12:
-            r2 = r2.replace(month = r2. month - segodnya.month)
-            print(r2)
+    if m + segodnya.month < 12:
+        data = segodnya.replace(month = segodnya.month + m)
+        x = data - segodnya
+        x1 = x.total_seconds() 
+        print(x1)
+        print(data.strftime("%d. %m. %Y"),"Я напомню вам, что следует утилизировать", product, ".")
+        def g():
+            print("Пора выкинуть", product)
+        timer = threading.Timer(x1, g)
+        timer.start()
+    else:
+        ost1 = int(m % 12)
+        print(ost1)
+        ost2 = int((ost1 + segodnya.month) % 12)
+        print(ost2)
+        cel3 = int((ost1 + segodnya.month) // 12)
+        print(cel3)
+        cel4 = int(m // 12)
+        print(cel4)
+        if ost1 + segodnya.month < 12:
+            data = segodnya.replace(month = segodnya.month + ost1)
+            data = data.replace(year = data.year + cel3 + cel4)
+            x = data - segodnya
+            x1 = x.total_seconds() 
+            print(x1)
+            print(data.strftime("%d. %m. %Y"),"Я напомню вам, что следует утилизировать", product, ".")
+            def g():
+                print("Пора выкинуть", product)
+            timer = threading.Timer(x1, g)
+            timer.start()
         else:
-            print(r2)
-        r3 = r2 - segodnya
-        r4 = r3.total_seconds()
-        print (r4)
-        print(r2.strftime("%d. %m. %Y"),"Я напомню вам, что следует утилизировать", product, ".")
-        def g():
-            print("Пора выкинуть", product)
-        timer = threading.Timer(r4, g)
-        timer.start()
-    elif m1 < 12:
-        r = segodnya.replace(month = segodnya.month + m)
-        print(r)
-        r2 = r - segodnya
-        r3 = r2.total_seconds()
-        print(r3)
-        print(r.strftime("%d. %m. %Y"),"Я напомню вам, что следует утилизировать", product, ".")
-        def g():
-            print("Пора выкинуть", product)
-        timer = threading.Timer(r3, g)
-        timer.start()
+            ost5 = 12 - ost1
+            data = segodnya.replace(month = segodnya.month - ost5)
+            print(data)
+            data = data.replace(year = data.year + cel3 + cel4)
+            x = data - segodnya
+            x1 = x.total_seconds() 
+            print(x1)
+            print(data.strftime("%d. %m. %Y"),"Я напомню вам, что следует утилизировать", product, ".")
+            def g():
+                print("Пора выкинуть", product)
+            timer = threading.Timer(x1, g)
+            timer.start()
+
 else:
     print("ОШИБКА")
+
+
+
 
         
         
