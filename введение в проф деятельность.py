@@ -17,7 +17,7 @@ if n == 1:
     data = datetime.datetime(c, b, a)
     x = data - segodnya
     x1 = x.total_seconds() 
-    print(x1)
+    print("Осталось", x1, "секунд.")
     print(data.strftime("%d. %m. %Y"),"Я напомню вам, что следует утилизировать", product, ".")
     def g():
         print("Пора выкинуть", product)
@@ -30,7 +30,7 @@ elif n == 2:
         data = segodnya.replace(month = segodnya.month + m)
         x = data - segodnya
         x1 = x.total_seconds() 
-        print(x1)
+        print("Осталось", x1, "секунд.")
         print(data.strftime("%d. %m. %Y"),"Я напомню вам, что следует утилизировать", product, ".")
         def g():
             print("Пора выкинуть", product)
@@ -46,7 +46,7 @@ elif n == 2:
             data = data.replace(year = data.year + cel3 + cel4)
             x = data - segodnya
             x1 = x.total_seconds() 
-            print(x1)
+            print("Осталось", x1, "секунд.")
             print(data.strftime("%d. %m. %Y"),"Я напомню вам, что следует утилизировать", product, ".")
             def g():
                 print("Пора выкинуть", product)
@@ -59,7 +59,7 @@ elif n == 2:
             data = data.replace(year = data.year + cel3 + cel4)
             x = data - segodnya
             x1 = x.total_seconds() 
-            print(x1)
+            print("Осталось", x1, "секунд.")
             print(data.strftime("%d. %m. %Y"),"Я напомню вам, что следует утилизировать", product, ".")
             def g():
                 print("Пора выкинуть", product)
@@ -68,11 +68,8 @@ elif n == 2:
 
 else:
     print("ОШИБКА")
+time.sleep(200)
 
-
-
-
-        
         
     
 
