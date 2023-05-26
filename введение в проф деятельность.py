@@ -38,13 +38,9 @@ elif n == 2:
         timer.start()
     else:
         ost1 = int(m % 12)
-        print(ost1)
         ost2 = int((ost1 + segodnya.month) % 12)
-        print(ost2)
         cel3 = int((ost1 + segodnya.month) // 12)
-        print(cel3)
         cel4 = int(m // 12)
-        print(cel4)
         if ost1 + segodnya.month < 12:
             data = segodnya.replace(month = segodnya.month + ost1)
             data = data.replace(year = data.year + cel3 + cel4)
